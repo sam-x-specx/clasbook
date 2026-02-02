@@ -1,0 +1,260 @@
+{% extends "home/base.html" %}
+{% load socialaccount %}
+
+{% block title %}Continue with Google{% endblock %}
+
+{% block content %}
+
+<div class="min-h-screen flex items-center justify-center px-4 py-12">
+    <div class="max-w-6xl w-full">
+        
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            
+            <!-- Left: Animated Geometric Characters -->
+            <div class="hidden lg:flex flex-col items-center justify-center relative">
+                <div class="relative w-[520px] h-[580px]">
+
+                    <!-- Orange Circle - Excited -->
+                    <div class="absolute bottom-0 left-1/2 -translate-x-30/40 -translate-y-20 w-80 h-80 bg-orange-600 rounded-full shadow-2xl z-40 transition-all duration-500 animate-bounce-subtle">
+                        <div class="relative w-full h-full flex items-center justify-center">
+                            <div class="flex gap-16">
+                                <div class="eye w-20 h-20 bg-white rounded-full flex items-center justify-center overflow-hidden border-4 border-orange-800/30 shadow-inner">
+                                    <div class="pupil w-10 h-10 bg-gray-900 rounded-full transition-transform duration-200"></div>
+                                </div>
+                                <div class="eye w-20 h-20 bg-white rounded-full flex items-center justify-center overflow-hidden border-4 border-orange-800/30 shadow-inner">
+                                    <div class="pupil w-10 h-10 bg-gray-900 rounded-full transition-transform duration-200"></div>
+                                </div>
+                            </div>
+                            <!-- Happy mouth -->
+                            <div class="absolute bottom-8 w-32 h-12 bg-orange-800 rounded-b-full"></div>
+                        </div>
+                    </div>
+
+                    <!-- Purple Rectangle - Waving -->
+                    <div class="absolute bottom-20 left-1/4 -translate-x-1/2 -translate-y-1/60 w-64 h-[35rem] bg-purple-700 rounded-xl shadow-2xl z-20 transition-all duration-500" style="animation: wave 3s ease-in-out infinite;">
+                        <div class="relative w-full h-full flex items-center justify-center">
+                            <div class="flex gap-14">
+                                <div class="eye w-16 h-16 bg-white -translate-y-50 rounded-full flex items-center justify-center overflow-hidden border-4 border-purple-900/30 shadow-inner">
+                                    <div class="pupil w-8 h-8 bg-gray-900 rounded-full transition-transform duration-200"></div>
+                                </div>
+                                <div class="eye w-16 h-16 bg-white -translate-y-50 rounded-full flex items-center justify-center overflow-hidden border-4 border-purple-900/30 shadow-inner">
+                                    <div class="pupil w-8 h-8 bg-gray-900 rounded-full transition-transform duration-200"></div>
+                                </div>
+                            </div>
+                            <!-- Smile -->
+                            <div class="absolute bottom-20 -translate-y-70 w-28 h-10 bg-purple-900 rounded-b-full"></div>
+                        </div>
+                    </div>
+
+                    <!-- Black Rectangle - Nodding -->
+                    <div class="absolute bottom-36 left-1/2 -translate-x-1/20 translate-y-8/60 w-52 h-[28rem] bg-gray-900 rounded-xl shadow-2xl z-30 transition-all duration-500" style="animation: nod 2.5s ease-in-out infinite;">
+                        <div class="relative w-full h-full flex items-center justify-center">
+<div class="flex gap-12">
+<div class="eye w-14 h-14 bg-white rounded-full -translate-y-35 flex items-center justify-center overflow-hidden border-4 border-gray-800/40 shadow-inner">
+<div class="pupil w-7 h-7 bg-gray-900 rounded-full transition-transform duration-200"></div>
+</div>
+<div class="eye w-14 h-14 bg-white rounded-full -translate-y-35 flex items-center justify-center overflow-hidden border-4 border-gray-800/40 shadow-inner">
+<div class="pupil w-7 h-7 bg-gray-900 rounded-full transition-transform duration-200"></div>
+</div>
+</div>
+                            <!-- Smile -->
+                            <div class="absolute bottom-16 -translate-y-50 w-24 h-8 bg-gray-700 rounded-b-full"></div>
+                        </div>
+                    </div>
+
+                    <!-- Yellow Capsule - Floating -->
+                    <div class="absolute bottom-28 translate-y-5/60 right-0 w-44 h-72 bg-yellow-500 rounded-full shadow-2xl z-40 rotate-[-8deg] transition-all duration-500" style="animation: float 4s ease-in-out infinite;">
+<div class="relative w-full h-full flex items-center justify-center">
+<div class="eye absolute top-10 left-1/2 -translate-x-1/2 w-16 h-16 bg-white rounded-full flex items-center justify-center overflow-hidden border-4 border-yellow-700/30 shadow-inner">
+<div class="pupil w-8 h-8 bg-gray-900 rounded-full transition-transform duration-200"></div>
+                            </div>
+                            <!-- Big smile -->
+                            <div class="absolute bottom-12 left-1/2 -translate-x-1/2 bg-gray-900 rounded-b-full w-24 h-12 bg-gray-900 rounded-b-full"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <p class="mt-8 text-gray-400 text-center text-lg font-medium">
+                    🎉 Ready to welcome you aboard!
+                </p>
+            </div>
+
+            <!-- Right: Google Sign-In Card -->
+            <div class="w-full max-w-md mx-auto lg:mx-0">
+                <div class="bg-gray-800/90 backdrop-blur-xl rounded-3xl shadow-2xl p-8 md:p-12 relative overflow-hidden">
+                    
+                    <!-- Decorative gradient background -->
+                    <div class="absolute inset-0 bg-[#0D1326] to-pink-600/10 pointer-events-none"></div>
+                    
+                    <div class="relative z-10">
+                        <!-- Header -->
+                        <div class="text-center mb-10">
+<div class="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-white via-white to-white rounded-full mb-6 shadow-lg animate-pulse-slow">
+    <svg class="w-12 h-12 text-white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+    </svg>
+</div>
+                            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+                                Continue with Google
+                            </h1>
+                            <p class="text-gray-400 text-lg">
+                                You're one step away from accessing your teaching dashboard
+                            </p>
+                        </div>
+
+                        <!-- Google Info Card -->
+                        <div class="bg-gradient-to-r from-blue-900/40 to-purple-900/40 border border-blue-500/30 rounded-2xl p-6 mb-8">
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 bg-blue-600/50 rounded-full flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="text-white font-semibold mb-1">Quick & Secure</h3>
+                                    <p class="text-gray-300 text-sm leading-relaxed">
+                                        Sign in securely using your Google account. We'll never share your information.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Continue Form -->
+                        <form method="post">
+                            {% csrf_token %}
+                            
+                            <button type="submit"
+                                class="group w-full bg-white cursor-pointer hover:from-black hover:rounded-xl text-black font-bold text-xl py-3 rounded-none shadow-xl transform transition-all duration-300 relative overflow-hidden">
+                                <span class="relative z-10 flex items-center justify-center gap-3">
+<div class="inline-flex flex items-center justify-center w-10 h-10 bg-white rounded-full shadow-lg animate-pulse-slow">
+    <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+    </svg>
+</div>
+                                    Continue to Google
+                                    <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                                    </svg>
+                                </span>
+                                <div class="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+                            </button>
+                        </form>
+
+                        <!-- Divider -->
+                        <div class="flex items-center my-8">
+                            <div class="flex-grow border-t border-gray-600"></div>
+                            <span class="mx-4 text-gray-500 text-sm font-medium">OR</span>
+                            <div class="flex-grow border-t border-gray-600"></div>
+                        </div>
+
+                        <!-- Cancel Link -->
+                        <a href="{% url 'account_login' %}"
+                           class="group flex items-center justify-center gap-2 w-full py-4 rounded-xl border-2 border-gray-600 hover:border-purple-500 text-gray-300 hover:text-white font-semibold transition-all duration-300">
+                            <svg class="w-5 h-5 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                            </svg>
+                            Back to Sign In
+                        </a>
+
+                        <!-- Security Notice -->
+                        <div class="mt-8 flex items-center justify-center gap-2 text-gray-500 text-sm">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                            </svg>
+                            <span>Secured by Google OAuth 2.0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<style>
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(-8deg); }
+    50% { transform: translateY(-20px) rotate(-8deg); }
+}
+
+@keyframes wave {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(2deg); }
+    75% { transform: rotate(-2deg); }
+}
+
+@keyframes nod {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes bounce-subtle {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+@keyframes pulse-slow {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+.animate-float {
+    animation: float 4s ease-in-out infinite;
+}
+
+.animate-wave {
+    animation: wave 3s ease-in-out infinite;
+}
+
+.animate-nod {
+    animation: nod 2.5s ease-in-out infinite;
+}
+
+.animate-bounce-subtle {
+    animation: bounce-subtle 3s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+    animation: pulse-slow 3s ease-in-out infinite;
+}
+
+/* Eye tracking */
+.eye {
+    transition: transform 0.1s ease;
+}
+
+.pupil {
+    transition: transform 0.2s ease;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Eye tracking mouse movement
+    document.addEventListener('mousemove', e => {
+        document.querySelectorAll('.eye').forEach(eye => {
+            const rect = eye.getBoundingClientRect();
+            const eyeX = rect.left + rect.width / 2;
+            const eyeY = rect.top + rect.height / 2;
+
+            const angle = Math.atan2(e.clientY - eyeY, e.clientX - eyeX);
+            const maxMove = 30;
+            const dx = Math.cos(angle) * maxMove;
+            const dy = Math.sin(angle) * maxMove;
+
+            const pupil = eye.querySelector('.pupil');
+            if (pupil) pupil.style.transform = `translate(${dx}%, ${dy}%)`;
+        });
+    });
+});
+</script>
+
+{% endblock %}
