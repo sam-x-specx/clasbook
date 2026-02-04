@@ -12,10 +12,13 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 
 from pathlib import Path
 import os
+from dotenv import load_dotenv
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+load_dotenv()
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
@@ -139,13 +142,13 @@ ROOT_URLCONF = "classbook.urls"
 
 WSGI_APPLICATION = "classbook.wsgi.application"
 
-
+DEBUG = os.getenv("DEBUG", "False").lower() in ("true", "1", "yes")
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
         'APPS': [
             {
-                'client_id': '268812499273-l963ge9on8909ssf25bbjf8bootj5flh.apps.googleusercontent.com',
-                'secret': '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',
+                'client_id': os.getenv("GOOGLE_CLIENT_ID"),
+                'secret': os.getenv("GOOGLE_CLIENT_SECRET"),
                 'key': '',
             },
         ],
