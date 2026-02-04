@@ -165,12 +165,11 @@ SOCIALACCOUNT_PROVIDERS = {
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default='sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3'),  # local fallback
-        conn_max_age=600,           # optional: keep connections alive longer
-        ssl_require=True            # important for Render (enforces SSL)
-    )
-}
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 
         # 'ENGINE': 'django.db.backends.postgresql',
         # 'NAME': 'classbook',
