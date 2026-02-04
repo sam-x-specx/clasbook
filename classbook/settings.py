@@ -112,6 +112,8 @@ ACCOUNT_FORMS = {
     
 }
 
+ALLOWED_HOSTS = ['*']  # ← allows any host (fine for testing / single Render app)
+
 
 MIDDLEWARE = [
     'allauth.account.middleware.AccountMiddleware',
