@@ -76,7 +76,7 @@ AUTHENTICATION_BACKENDS = [
 
 
 # Allauth settings
-ACCOUNT_LOGIN_METHODS = {"email"}
+ACCOUNT_LOGIN_METHODS = {"email" : True}
 
 ACCOUNT_SIGNUP_FIELDS = [
     "email*",
@@ -179,7 +179,6 @@ SOCIALACCOUNT_PROVIDERS = {
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgresql://postgresql:Samx#7samx@render.com:5432/classbook',  # fallback for local dev
         conn_max_age=600,
         conn_health_checks=True,
     )
