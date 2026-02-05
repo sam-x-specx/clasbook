@@ -178,14 +178,11 @@ SOCIALACCOUNT_PROVIDERS = {
 # }
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('POSTGRES_DB'),
-        'USER': os.getenv('POSTGRES_USER'),
-        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
-        'HOST': os.getenv('POSTGRES_HOST'),
-        'PORT': os.getenv('POSTGRES_PORT'),
-    }
+    'default': dj_database_url.config(
+        default='postgresql://postgresql:Samx#7samx@render.com:5432/classbook',  # fallback for local dev
+        conn_max_age=600,
+        conn_health_checks=True,
+    )
 }
 
 
