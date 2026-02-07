@@ -105,9 +105,9 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'classbook.cls@gmail.com'  # Your email
-EMAIL_HOST_PASSWORD = 'umkd mwwk bbij ypia'  # Use App Password!
-DEFAULT_FROM_EMAIL = 'classbook.cls@gmail.com' # Your email
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")          # e.g. 'classbook.cls@gmail.com'
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")  # ← your App Password here
+DEFAULT_FROM_EMAIL = os.getenv("EMAIL_HOST_USER")       # same as above
 
 # Custom signup form with secret key
 ACCOUNT_FORMS = {
