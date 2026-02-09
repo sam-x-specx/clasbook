@@ -31,11 +31,11 @@ load_dotenv()
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = "django-insecure-a42mv&1%yl(hr@dl_hu22y)e4k1j@j5o^!4iv=@)d@bjnj-vpl"
 SECRET_KEY = os.environ.get("SECRET_KEY")
+if not SECRET_KEY:
+    raise ValueError("SECRET_KEY is not set in environment variables!")
 
-SECRET_KEY = "django-insecure-a42mv&1%yl(hr@dl_hu22y)e4k1j@j5o^!4iv=@)d@bjnj-vpl"
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# # SECURITY WARNING: don't run with debug turned on in production!
+# DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -86,9 +86,9 @@ ACCOUNT_SIGNUP_FIELDS = [
 
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = "mandatory"
-ACCOUNT_AUTHENTICATION_METHOD = "email"
+# ACCOUNT_AUTHENTICATION_METHOD = "email"
 ACCOUNT_USERNAME_REQUIRED = False
-ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = True
+# ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = True
 ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
 ACCOUNT_LOGOUT_ON_GET = True
 ACCOUNT_LOGOUT_REDIRECT_URL = '/'
