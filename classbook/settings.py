@@ -30,6 +30,10 @@ load_dotenv()
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = "django-insecure-a42mv&1%yl(hr@dl_hu22y)e4k1j@j5o^!4iv=@)d@bjnj-vpl"
+
+# Generate locally run in terminal
+# python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
+
 SECRET_KEY = os.environ.get("SECRET_KEY")
 if not SECRET_KEY:
     raise ValueError("SECRET_KEY is not set in environment variables!")
